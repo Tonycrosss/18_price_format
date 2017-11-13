@@ -16,6 +16,10 @@ class FormatPriceTestCase(unittest.TestCase):
     def test_empty_string(self):
         pass
 
+    def test_float_number(self):
+        pretty_num1 = format_price(32333245.25213321321)
+        self.assertEqual(pretty_num1, '32 333 245')
+
 
 if __name__ == '__main__':
     unittest.main()
