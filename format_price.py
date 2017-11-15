@@ -2,23 +2,17 @@ import sys
 
 
 def format_price(price):
-    if isinstance(price, float):
+    default_number = '3 245'
+    try:
         int_number = int(price)
         pretty_number ='{0:,}'.format(int_number).replace(',', ' ')
         return pretty_number
-    else:
-        try:
-            int_number = int(price)
-            print(int_number)
-            pretty_number = '{0:,}'.format(int_number).replace(',', ' ')
-        except IndexError:
-            print('error')
-    return pretty_number
+    except ValueError:
+        return default_number
 
 
 def main():
-    price_to_format = sys.argv[0]
-    print(price_to_format)
+    price_to_format = sys.argv[1]
     print(format_price(price_to_format))
 
 
