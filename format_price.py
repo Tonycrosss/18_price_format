@@ -2,13 +2,12 @@ import sys
 
 
 def format_price(price):
-    default_number = '3 245'
     try:
         int_number = int(price)
         pretty_number ='{0:,}'.format(int_number).replace(',', ' ')
         return pretty_number
     except ValueError:
-        return default_number
+        return price
 
 
 def main():
